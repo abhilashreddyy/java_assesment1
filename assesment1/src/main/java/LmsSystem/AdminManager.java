@@ -12,25 +12,16 @@ public class AdminManager {
     //PublicLeaveManagement
     //UserManagement
 
-    List<EmpDetails> empDetails ;
+
 
     public AdminManager(List<EmpDetails> empDetails){
-        this.empDetails = empDetails;
         HashMap<Integer,Integer> empEmptyLeaveMapping = new HashMap<Integer, Integer>();
         for(EmpDetails emp : empDetails){
             empEmptyLeaveMapping.put(emp.getEmpId(),0);
         }
-        privateLeaveManagement = new PrivateLeaveManagement(empEmptyLeaveMapping);
+        privateLeaveManagement = new PrivateLeaveManagement(empEmptyLeaveMapping,empDetails);
     }
 
-    EmpDetails getEmpDetailsFromId(int empId){
 
-        for(EmpDetails emp : empDetails){
-            if(emp.getEmpId() == empId){
-                return emp;
-            }
-        }
-        return null;
-    }
 
 }
