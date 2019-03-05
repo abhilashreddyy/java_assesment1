@@ -10,7 +10,7 @@ import lombok.Setter;
 public class EmpDetails {
     String Name;
     int empId;
-    int dateOfJoin;
+    String dateOfJoin;
     DynamicEmpDetails dynamicEmpDetails;
     //LeaveDates leavedates;
 }
